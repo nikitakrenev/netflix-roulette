@@ -1,5 +1,5 @@
 import React from "react";
-import { IMovie } from "../../entities/movie";
+
 import {
   Card,
   FilmCover,
@@ -10,20 +10,23 @@ import {
   FilmYear,
 } from "./styles";
 
-interface IMovieCardProps {
-  item: IMovie;
+interface MovieCardProps {
+  cover: string;
+  title: string;
+  genre: string;
+  year: number;
 }
 
-export const MovieCard: React.FC<IMovieCardProps> = ({ item }) => {
+export const MovieCard = ({ cover, title, genre, year }: MovieCardProps) => {
   return (
     <Card>
-      <FilmCover src={item.cover} alt="cover"/>
+      <FilmCover src={cover} alt="cover" />
       <FilmInfo>
         <FilmTitleGenre>
-          <FilmTitle>{item.title}</FilmTitle>
-          <FilmGenre>{item.genre}</FilmGenre>
+          <FilmTitle>{title}</FilmTitle>
+          <FilmGenre>{genre}</FilmGenre>
         </FilmTitleGenre>
-        <FilmYear>{item.year}</FilmYear>
+        <FilmYear>{year}</FilmYear>
       </FilmInfo>
     </Card>
   );

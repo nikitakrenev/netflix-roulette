@@ -1,10 +1,13 @@
 import React from "react";
-import { Container, Blur } from "./slyles";
+import { Container, Blur, theme } from "./slyles";
+import {ThemeProvider} from "styled-components";
 
 export const InfoSection: React.FC = (props) => {
   return (
-    <Container>
-      <Blur>{props.children}</Blur>
-    </Container>
+      <ThemeProvider theme={theme}>
+          <Container>
+              <Blur>{props.children}</Blur>
+          </Container>
+      </ThemeProvider>
   );
 };

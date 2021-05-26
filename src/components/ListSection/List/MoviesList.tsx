@@ -1,19 +1,23 @@
 import React from "react";
-import { IMovie } from "../../../entities/movie";
+import { Movie } from "../../../entities/movie";
 import { MovieCard } from "../../Card";
 import { Container } from "./styles";
 
-interface IMoviesListProps {
-  movies: IMovie[];
+interface MoviesListProps {
+  movies: Movie[];
 }
 
-export const MoviesList = (props: IMoviesListProps) => {
-  const { movies } = props;
-
+export const MoviesList = ({ movies }: MoviesListProps) => {
   return (
     <Container>
-      {movies.map((item, index) => (
-        <MovieCard key={index} item={item} />
+      {movies.map((item) => (
+        <MovieCard
+          key={item.id}
+          cover={item.cover}
+          title={item.title}
+          genre={item.genre}
+          year={item.year}
+        />
       ))}
     </Container>
   );

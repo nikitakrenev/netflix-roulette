@@ -10,7 +10,7 @@ export const Container = styled.div`
 
 export const FilmInfo = styled.div`
   padding: 30px 0 0 60px;
-  color: #ffffff;
+  color: #a7a7a7;
 `;
 
 export const FilmTitleRate = styled.div`
@@ -20,16 +20,6 @@ export const FilmTitleRate = styled.div`
 export const FilmCover = styled.img`
   width: 300px;
   height: 400px;
-`;
-
-export const FilmTitle = styled.div`
-  font-size: 56px;
-  line-height: 60px;
-`;
-
-export const FilmSubTitle = styled.div`
-  font-size: 18px;
-  line-height: 36px;
 `;
 
 export const FilmRating = styled.div`
@@ -51,14 +41,10 @@ export const FilmYearDuration = styled.div`
   font-size: 24px;
 `;
 
-export const FilmYear = styled.div``;
+export const FilmDescription = styled.div`
+  padding-right: 100px;
+`;
 
 export const FilmDuration = styled.div`
   margin-left: 50px;
-`;
-
-export const FilmDescription = styled.p`
-  margin-top: 20px;
-  padding-right: 100px;
-  font-size: 18px;
 `;

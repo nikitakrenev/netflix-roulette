@@ -25,7 +25,8 @@ export const FilmTitle = styled.div`
 `;
 
 export const FilmGenre = styled.div`
-  color: #5c5c5c
+  font-size: 1rem;
+  color: #5c5c5c;
 `;
 
 export const FilmYear = styled.div`

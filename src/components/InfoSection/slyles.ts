@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
+export const theme = {
+    bg: "https://i.insider.com/5e721af9c48540088f66f3a3?width=1200&format=jpeg",
+}
+
 export const Container = styled.div`
   height: 600px;
   flex: 1;
   overflow: auto;
   width: 100%;
-  background-image: url(https://i.insider.com/5e721af9c48540088f66f3a3?width=1200&format=jpeg);
+  background-image: url(${props => props.theme.bg});
   background-repeat: repeat;
   background-size: contain;
 `;
