@@ -1,10 +1,9 @@
 import React from "react";
-
+import { MovieOptions } from "../Options";
 import {
   Card,
   FilmCover,
   FilmInfo,
-  FilmTitleGenre,
   FilmTitle,
   FilmGenre,
   FilmYear,
@@ -18,14 +17,22 @@ interface MovieCardProps {
 }
 
 export const MovieCard = ({ cover, title, genre, year }: MovieCardProps) => {
+  const [showOptions, setShowOptions] = React.useState<boolean>(false);
+
   return (
     <Card>
-      <FilmCover src={cover} alt="cover" />
+      <div
+        onMouseEnter={() => setShowOptions(true)}
+        onMouseLeave={() => setShowOptions(false)}
+      >
+        <MovieOptions showOptions={showOptions} />
+        <FilmCover src={cover} alt="cover" />
+      </div>
       <FilmInfo>
-        <FilmTitleGenre>
+        <div>
           <FilmTitle>{title}</FilmTitle>
           <FilmGenre>{genre}</FilmGenre>
-        </FilmTitleGenre>
+        </div>
         <FilmYear>{year}</FilmYear>
       </FilmInfo>
     </Card>

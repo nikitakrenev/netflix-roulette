@@ -12,13 +12,10 @@ export const Home: React.FC = () => {
     <React.Fragment>
       <GlobalStyle />
       <Header />
-      <div>
-        <InfoSection>
-          {/*movies[0] temp solution*/}
-          <MovieDescription pickedMovie={movies[0]} />
-        </InfoSection>
-        <ListSection movies={movies} />
-      </div>
+      <InfoSection>
+        <MovieDescription pickedMovie={movies[0]} /> {/*movies[0] temp solution*/}
+      </InfoSection>
+      <ListSection movies={movies} />
       <Footer />
     </React.Fragment>
   );

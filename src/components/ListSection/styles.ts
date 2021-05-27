@@ -5,13 +5,13 @@ export const Container = styled.div`
   flex: 1;
   overflow: auto;
   width: 100%;
-  background: #232323;
+  background: ${props => props.theme.bgColors.main};
 `;
 
 export const MoviesCount = styled.div`
-  padding: 30px 0;
+  padding: 25px 0;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1080px;
   font-size: 1.3rem;
-  color: #ffffff;
+  color: ${props => props.theme.textColors.main};
 `;

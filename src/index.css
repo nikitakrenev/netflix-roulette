@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: Volte-Light, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -10,4 +10,29 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@font-face {
+  font-family: 'Volte';
+  src: url('fonts/Volte.woff');
+}
+
+@font-face {
+  font-family: 'Volte-Light';
+  src: url('fonts/VolteLight.woff');
+}
+
+@font-face {
+  font-family: 'Volte-Bold';
+  src: url('fonts/VolteBold.woff');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('fonts/Opensans.woff');
+}
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('fonts/OpensansLight.woff');
 }

@@ -4,6 +4,7 @@ import {
   FilmCover,
   FilmInfo,
   FilmTitleRate,
+  FilmSubTitle,
   FilmRating,
   FilmYearDuration,
   FilmDescription,
@@ -23,12 +24,10 @@ export const MovieDescription = ({
       <FilmCover src={cover} />
       <FilmInfo>
         <FilmTitleRate>
-          <div>
-            <h1>{title}</h1>
-            <div>{subTitle}</div>
-          </div>
+          <h1>{title}</h1>
           <FilmRating>{rating}</FilmRating>
         </FilmTitleRate>
+        <FilmSubTitle>{subTitle}</FilmSubTitle>
         <FilmYearDuration>
           <div>{year}</div>
           <FilmDuration>{duration} min</FilmDuration>
