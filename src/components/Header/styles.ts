@@ -23,3 +23,20 @@ export const Search = styled.div`
   color: ${props => props.theme.textColors.red};
   cursor: pointer;
 `;
+
+export const Button = styled.button`
+  height: 45px;
+  width: 180px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(85, 85, 85, 0.8);;
+  font-size: 1.3rem;
+  font-family: ${props => props.theme.fonts.regular};
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: ${props => props.theme.textColors.red};
+  cursor: pointer;
+  :hover {
+    background-color: #555555;
+  }
+`;

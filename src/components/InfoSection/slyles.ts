@@ -1,10 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div<{ bg: string }>`
-  height: 560px;
-  flex: 1;
-  overflow: auto;
-  width: 100%;
   background-image: url(${(props) => props.bg});
   background-repeat: repeat;
   background-size: contain;

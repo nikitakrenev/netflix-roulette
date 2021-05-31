@@ -1,8 +1,24 @@
-import styled from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  overflow: hidden;
+export const GlobalStyle = createGlobalStyle`
+  body {
+    font-size: 1.1rem;
+    color: ${props => props.theme.textColors.primary};
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 3.3rem;
+    letter-spacing: 0.1rem;
+  }
+
+  p {
+    margin: 0;
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 `;
+

@@ -6,7 +6,7 @@ declare module "styled-components" {
       main: string;
       bold: string;
       regular: string;
-      description: string,
+      description: string;
     };
     bgColors: {
       main: string;

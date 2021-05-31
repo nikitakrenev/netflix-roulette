@@ -1,9 +1,8 @@
-import { Movie } from "../entities/movie";
-import { Item } from "../entities/item";
+import { Movie } from "../../entities/movie";
 
 export const movies: Movie[] = [
   {
-    id: Date.now(),
+    id: 1,
     title: "Pulp Fiction",
     subTitle: "Oscar winning Movie",
     rating: 4.3,
@@ -21,7 +20,7 @@ export const movies: Movie[] = [
     genre: "Action & Adventure",
   },
   {
-    id: Date.now(),
+    id: 2,
     title: "Bohemian Rhapsody",
     subTitle: "Oscar winning Movie",
     rating: 4.6,
@@ -30,15 +29,14 @@ export const movies: Movie[] = [
     cover:
       "https://images-na.ssl-images-amazon.com/images/I/91j-ZOIvO1L._AC_SL1500_.jpg",
     description:
-      "Bohemian Rhapsody is a 2018 biographical musical drama film directed by Bryan Singer[a] from a screenplay by " +
-      "Anthony McCarten, and produced by Graham King and Queen manager Jim Beach. The film tells the story of the " +
-      "life of Freddie Mercury, the lead singer of the British rock musical band Queen, from the formation of the " +
-      "band up to their 1985 Live Aid performance at the original Wembley Stadium. The film stars Rami Malek as Mercury, " +
-      "with Lucy Boynton, Gwilym Lee, Ben Hardy, Joe Mazzello, Aidan Gillen, Tom Hollander, Allen Leech and Mike Myers in supporting roles.",
+        "Bohemian Rhapsody is a 2018 biographical musical drama film directed by Bryan Singer from a screenplay by " +
+        "Anthony McCarten, and produced by Graham King and Queen manager Jim Beach. The film tells the story of the " +
+        "life of Freddie Mercury, the lead singer of the British rock musical band Queen, from the formation of the " +
+        "band up to their 1985 Live Aid performance at the original Wembley Stadium.",
     genre: "Drama, Biography, Music",
   },
   {
-    id: Date.now(),
+    id: 3,
     title: "Kill Bill",
     subTitle: "The 4th film by Quentin Tarantino",
     rating: 4.5,
@@ -54,7 +52,7 @@ export const movies: Movie[] = [
     genre: "Oscar winning Movie",
   },
   {
-    id: Date.now(),
+    id: 4,
     title: "Pulp Fiction",
     subTitle: "Oscar winning Movie",
     rating: 4.3,
@@ -72,7 +70,7 @@ export const movies: Movie[] = [
     genre: "Action & Adventure",
   },
   {
-    id: Date.now(),
+    id: 5,
     title: "Bohemian Rhapsody",
     subTitle: "Oscar winning Movie",
     rating: 4.6,
@@ -81,15 +79,14 @@ export const movies: Movie[] = [
     cover:
         "https://images-na.ssl-images-amazon.com/images/I/91j-ZOIvO1L._AC_SL1500_.jpg",
     description:
-        "Bohemian Rhapsody is a 2018 biographical musical drama film directed by Bryan Singer[a] from a screenplay by " +
+        "Bohemian Rhapsody is a 2018 biographical musical drama film directed by Bryan Singer from a screenplay by " +
         "Anthony McCarten, and produced by Graham King and Queen manager Jim Beach. The film tells the story of the " +
         "life of Freddie Mercury, the lead singer of the British rock musical band Queen, from the formation of the " +
-        "band up to their 1985 Live Aid performance at the original Wembley Stadium. The film stars Rami Malek as Mercury, " +
-        "with Lucy Boynton, Gwilym Lee, Ben Hardy, Joe Mazzello, Aidan Gillen, Tom Hollander, Allen Leech and Mike Myers in supporting roles.",
+        "band up to their 1985 Live Aid performance at the original Wembley Stadium.",
     genre: "Drama, Biography, Music",
   },
   {
-    id: Date.now(),
+    id: 6,
     title: "Kill Bill",
     subTitle: "The 4th film by Quentin Tarantino",
     rating: 4.5,
@@ -103,16 +100,5 @@ export const movies: Movie[] = [
         "and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child. " +
         "Her journey takes her to Tokyo, where she battles the yakuza.",
     genre: "Oscar winning Movie",
-  },
-];
-
-export const items: Item[] = [
-  {
-    name: "Edit",
-    action: () => {},
-  },
-  {
-    name: "Delete",
-    action: () => {},
   },
 ];

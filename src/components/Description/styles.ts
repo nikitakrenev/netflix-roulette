@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding-top: 90px;
+  padding: 90px 0 60px;
   margin: 0 auto;
   max-width: 1080px;
   width: 100%;
@@ -22,7 +22,7 @@ export const FilmTitleRate = styled.div`
   align-items: flex-end;
 `;
 
-export const FilmCover = styled.img`
+export const FilmCover = styled.div`
   width: 280px;
   height: 400px;
 `;

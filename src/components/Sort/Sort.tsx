@@ -16,20 +16,21 @@ import ClickAwayListener from "@material-ui/core/ClickAwayListener";
 export const Sort: React.FC = () => {
   const [showContext, setShowContext] = React.useState<boolean>(false);
   const [picked, setPicked] = React.useState<string>("RELEASE DATE");
+  const sortType = (name: string) => {
+    setPicked(name);
+    setShowContext(false);
+  }
+
   const items: Item[] = [
     {
+      id: 1,
       name: "RELEASE DATE",
-      action: () => {
-        setPicked("RELEASE DATE");
-        setShowContext(false);
-      },
+      action: () => sortType("RELEASE DATE"),
     },
     {
+      id: 2,
       name: "RATING",
-      action: () => {
-        setPicked("RATING");
-        setShowContext(false);
-      },
+      action: () => sortType("RATING"),
     },
   ];
 

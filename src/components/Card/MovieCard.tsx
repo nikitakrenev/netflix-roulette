@@ -1,7 +1,9 @@
 import React from "react";
 import { MovieOptions } from "../Options";
+import { Link } from "react-router-dom";
+import {Movie} from "../../entities/movie";
 import {
-  Card,
+  Container,
   FilmCover,
   FilmInfo,
   FilmTitle,
@@ -10,23 +12,25 @@ import {
 } from "./styles";
 
 interface MovieCardProps {
-  cover: string;
-  title: string;
-  genre: string;
-  year: number;
+  item: Movie;
 }
 
-export const MovieCard = ({ cover, title, genre, year }: MovieCardProps) => {
+export const MovieCard = ({item}: MovieCardProps) => {
   const [showOptions, setShowOptions] = React.useState<boolean>(false);
+  const {title, cover, id: movieId, genre, year} = item;
+
+  const goUp = () => window.scrollTo(0, 0);
 
   return (
-    <Card>
+    <Container>
       <div
         onMouseEnter={() => setShowOptions(true)}
         onMouseLeave={() => setShowOptions(false)}
       >
-        <MovieOptions showOptions={showOptions} />
-        <FilmCover src={cover} alt="cover" />
+        <MovieOptions movie={item} showOptions={showOptions} hideOptions={() => setShowOptions(false)} />
+        <Link to={`/film/${movieId}`}>
+          <FilmCover src={cover} alt="cover" onClick={goUp} />
+        </Link>
       </div>
       <FilmInfo>
         <div>
@@ -35,6 +39,6 @@ export const MovieCard = ({ cover, title, genre, year }: MovieCardProps) => {
         </div>
         <FilmYear>{year}</FilmYear>
       </FilmInfo>
-    </Card>
+    </Container>
   );
 };

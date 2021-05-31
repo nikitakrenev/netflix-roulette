@@ -12,11 +12,8 @@ export const MoviesList = ({ movies }: MoviesListProps) => {
     <Container>
       {movies.map((item) => (
         <MovieCard
+          item={item}
           key={item.id}
-          cover={item.cover}
-          title={item.title}
-          genre={item.genre}
-          year={item.year}
         />
       ))}
     </Container>

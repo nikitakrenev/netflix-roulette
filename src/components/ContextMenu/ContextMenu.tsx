@@ -25,8 +25,8 @@ export const ContextMenu = ({
           <CloseIcon fontSize="small" />
         </Close>
       )}
-      {items.map((item) => (
-        <Option onClick={() => item.action()}>{item.name}</Option>
+      {items.map(({action, name, id}) => (
+        <Option onClick={() => action()} key={id}>{name}</Option>
       ))}
     </Container>
   );

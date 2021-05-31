@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 180px;
+  width: 190px;
   padding-bottom: 5px;
   background-color: ${props => props.theme.bgColors.main};
   border-radius: 5px;
@@ -15,7 +15,7 @@ export const Close = styled.div`
 `;
 
 export const Option = styled.div`
-  padding: 10px 20px;
+  padding: 10px 24px 10px; 
   cursor: pointer;
   :hover {
     background-color: ${props => props.theme.textColors.red};

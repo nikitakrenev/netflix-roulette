@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const Container = styled.div`
   position: relative;
+  margin: 0 28px;
   padding-bottom: 50px;
   color: ${props => props.theme.textColors.primary};
 `;
@@ -13,7 +14,7 @@ export const FilmCover = styled.img`
 `;
 
 export const FilmInfo = styled.div`
-  padding-top: 20px;
+  padding-top: 18px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
