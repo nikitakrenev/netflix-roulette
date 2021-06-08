@@ -31,7 +31,7 @@ export const FilmGenre = styled.div`
 `;
 
 export const FilmYear = styled.div`
-  padding: 2px 14px;
+  padding: 3px 14px 1px;
   border: 1px solid ${props => props.theme.textColors.secondary};
   border-radius: 5px;
 `;

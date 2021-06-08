@@ -1,7 +1,9 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { Movie } from "./pages/movie";
-import { Search } from "./pages/search";
+import { MovieSection } from "./pages/movie";
+import { SearchSection } from "./pages/search";
+import MoviesContext from "./contexts/movies/MoviesContext";
+import { useMovies } from "./hooks/movies";
 import { DefaultTheme, ThemeProvider } from "styled-components";
 
 const theme: DefaultTheme = {
@@ -28,18 +30,48 @@ const theme: DefaultTheme = {
 };
 
 const App: React.FC = () => {
+  const {
+    moviesList,
+    removeMovieFromList,
+    searchInList,
+    getMovie,
+    filters,
+    addMovieToList,
+    editMovieInList,
+    sortMovies,
+    filterMovies,
+  } = useMovies();
+
   return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Switch>
-          <Route path={"/"} exact>
-            <Redirect to={"/search"} />
-          </Route>
-          <Route path={"/search"} exact component={Search} />
-          <Route path={"/film/:id"} component={Movie} />
-        </Switch>
-      </BrowserRouter>
-    </ThemeProvider>
+    <MoviesContext.Provider
+      value={{
+        moviesList,
+        removeMovieFromList,
+        searchInList,
+        getMovie,
+        filters,
+        addMovieToList,
+        editMovieInList,
+        sortMovies,
+        filterMovies,
+      }}
+    >
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Switch>
+            <Route path={"/"} exact>
+              <Redirect to={"/search"} />
+            </Route>
+            <Route path={"/search"} exact>
+              <SearchSection />
+            </Route>
+            <Route path={"/film/:id"}>
+              <MovieSection />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </ThemeProvider>
+    </MoviesContext.Provider>
   );
 };
 

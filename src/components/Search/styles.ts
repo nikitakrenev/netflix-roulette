@@ -17,6 +17,7 @@ export const Title = styled.div`
 export const SearchInput = styled.div`
   margin-top: 33px;
   display: flex;
+  align-items: center;
 `;
 
 export const Input = styled.input`
@@ -48,4 +49,17 @@ export const Button = styled.button`
   :hover {
     background-color: rgba(246, 82, 97, 0.8);
   }
+`;
+export const IconFiled = styled.div`
+  position: relative;
+`;
+
+export const IconButton = styled.div`
+  position: absolute;
+  bottom: 16.5px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  color: ${props => props.theme.textColors.secondary};
+  cursor: pointer;
 `;
