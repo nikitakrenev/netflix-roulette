@@ -1,18 +1,33 @@
 import React from "react";
-import { Container, Box, Logo, Bold, Search } from "./styles";
+import { Logo } from "../Logo";
+import { Modal } from "../Modal";
+import { Portal } from "../Portal";
+import { Link } from "react-router-dom";
+import { Container, Box, Search, Button } from "./styles";
 import SearchIcon from "@material-ui/icons/Search";
 
 export const Header: React.FC = () => {
-    return (
-      <Container>
-        <Box>
-          <Logo>
-            <Bold>netflix</Bold>roulette
-          </Logo>
-          <Search>
-            <SearchIcon fontSize="large" />
-          </Search>
-        </Box>
-      </Container>
-    );
-}
+  const [showModal, setShowModal] = React.useState<boolean>(false);
+  const isSearch: boolean = window.location.pathname.includes("/search");
+
+  return (
+    <Container>
+      <Box>
+        <Logo />
+        {showModal ? (
+          <Portal>
+            <Modal closeModal={() => setShowModal(false)} />
+          </Portal>
+        ) : isSearch ? (
+          <Button onClick={() => setShowModal(!showModal)}>+ add movie</Button>
+        ) : (
+          <Link to="/search">
+            <Search>
+              <SearchIcon fontSize="large" />
+            </Search>
+          </Link>
+        )}
+      </Box>
+    </Container>
+  );
+};

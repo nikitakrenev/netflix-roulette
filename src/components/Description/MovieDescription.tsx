@@ -1,40 +1,40 @@
 import React from "react";
+import { useParams } from "react-router-dom";
+import { useMovies } from "../../hooks/movies";
 import {
   Container,
   FilmCover,
   FilmInfo,
   FilmTitleRate,
+  FilmSubTitle,
   FilmRating,
   FilmYearDuration,
   FilmDescription,
   FilmDuration,
 } from "./styles";
-import { Movie } from "../../entities/movie";
 
-interface MovieDescriptionProps {
-  pickedMovie: Movie;
-}
+export const MovieDescription: React.FC = () => {
+  const { id } = useParams<{ id: string }>();
+  const { getMovie } = useMovies();
+  const [movie] = getMovie(Number(id));
 
-export const MovieDescription = ({
-  pickedMovie: { cover, title, subTitle, year, description, duration, rating },
-}: MovieDescriptionProps) => {
   return (
     <Container>
-      <FilmCover src={cover} />
+      <FilmCover>
+        <img src={movie.cover} alt="cover" width={280} height={400} />
+      </FilmCover>
       <FilmInfo>
         <FilmTitleRate>
-          <div>
-            <h1>{title}</h1>
-            <div>{subTitle}</div>
-          </div>
-          <FilmRating>{rating}</FilmRating>
+          <h1>{movie.title}</h1>
+          <FilmRating>{movie.rating}</FilmRating>
         </FilmTitleRate>
+        <FilmSubTitle>{movie.subTitle}</FilmSubTitle>
         <FilmYearDuration>
-          <div>{year}</div>
-          <FilmDuration>{duration} min</FilmDuration>
+          <div>{movie.year}</div>
+          <FilmDuration>{movie.duration} min</FilmDuration>
         </FilmYearDuration>
         <FilmDescription>
-          <p>{description}</p>
+          <p>{movie.description}</p>
         </FilmDescription>
       </FilmInfo>
     </Container>
