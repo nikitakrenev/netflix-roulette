@@ -2,14 +2,11 @@ import React from "react";
 import { MoviesFilter } from "./Filter";
 import { MoviesList } from "./List";
 import { Container, MoviesCount, MoviesEmpty } from "./styles";
-import { Movie } from "../../entities/movie";
+import MoviesContext from "../../contexts/movies/MoviesContext";
 
-interface ListSectionProps {
-  movies: Movie[];
-}
-
-const ListSection = ({ movies }: ListSectionProps) => {
-  const empty: boolean = !movies.length;
+const ListSection: React.FC = () => {
+  const { moviesList } = React.useContext(MoviesContext);
+  const empty: boolean = !moviesList.length;
 
   return (
     <Container>
@@ -19,9 +16,9 @@ const ListSection = ({ movies }: ListSectionProps) => {
       ) : (
         <React.Fragment>
           <MoviesCount>
-            <b>{movies.length}</b> movies found
+            <b>{moviesList.length}</b> movies found
           </MoviesCount>
-          <MoviesList movies={movies} />
+          <MoviesList movies={moviesList} />
         </React.Fragment>
       )}
     </Container>

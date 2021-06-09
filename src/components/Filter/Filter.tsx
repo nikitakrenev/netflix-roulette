@@ -1,18 +1,24 @@
 import React from "react";
 import { FilterItem } from "./styles";
+import MoviesContext from "../../contexts/movies/MoviesContext";
 
 export const Filter: React.FC = () => {
   const [picked, setPicked] = React.useState<number>(0);
-  const genres: string[] = ["All", "Documentary", "Comedy", "Horror", "Crime"];
+  const { filters, filterMovies } = React.useContext(MoviesContext);
+
+  const setFilter = (item: string, index: number) => {
+      setPicked(index);
+      filterMovies(item);
+  }
 
   return (
     <React.Fragment>
       <ul>
-        {genres.map((item, index) => (
+        {filters.map((item, index) => (
           <FilterItem
             key={item}
-            border={picked === index ? "3px solid #f65261" : ""}
-            onClick={() => setPicked(index)}
+            border={picked === index}
+            onClick={() => setFilter(item, index)}
           >
             {item}
           </FilterItem>

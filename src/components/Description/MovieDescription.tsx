@@ -1,6 +1,5 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useMovies } from "../../hooks/movies";
 import {
   Container,
   FilmCover,
@@ -12,11 +11,14 @@ import {
   FilmDescription,
   FilmDuration,
 } from "./styles";
+import MoviesContext from "../../contexts/movies/MoviesContext";
 
 export const MovieDescription: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const { getMovie } = useMovies();
-  const [movie] = getMovie(Number(id));
+  const { getMovie } = React.useContext(MoviesContext);
+  const movie = getMovie(Number(id));
+
+  if (!movie) document.location.href="/search";
 
   return (
     <Container>
@@ -30,7 +32,7 @@ export const MovieDescription: React.FC = () => {
         </FilmTitleRate>
         <FilmSubTitle>{movie.subTitle}</FilmSubTitle>
         <FilmYearDuration>
-          <div>{movie.year}</div>
+          <div>{movie.year.getFullYear()}</div>
           <FilmDuration>{movie.duration} min</FilmDuration>
         </FilmYearDuration>
         <FilmDescription>

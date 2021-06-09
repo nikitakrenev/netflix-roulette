@@ -4,6 +4,7 @@ export const Container = styled.div`
   position: relative;
   display: flex;
   align-items: center;
+  text-transform: uppercase;
 `;
 
 export const SortBy = styled.div`
